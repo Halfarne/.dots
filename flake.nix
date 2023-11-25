@@ -9,6 +9,8 @@
     home-manager.url = "github:nix-community/home-manager/release-23.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    hyprland.url = "github:hyprwm/Hyprland";
+
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
@@ -21,6 +23,7 @@
     self,
     nixpkgs,
     home-manager,
+    hyprland,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -53,7 +56,11 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
-        modules = [./halfofpc/hm/home.nix];
+        modules = [
+        ./halfofpc/hm/home.nix
+        hyprland.homeManagerModules.default
+        {wayland.windowManager.hyprland.enable = true;}
+        ];
       };
      # "elektrikar@halfofwork" = home-manager.lib.homeManagerConfiguration {
      #   pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance

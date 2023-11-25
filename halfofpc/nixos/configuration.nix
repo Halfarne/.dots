@@ -3,7 +3,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      /hardware-configuration.nix #(in /etc/nixos/configuration.nix)
+      ./hardware-configuration.nix #(in /etc/nixos/configuration.nix)
     ];
 
   # Boot
@@ -247,6 +247,10 @@
  
      blueman
   ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+                "electron-24.8.6"
+              ];
 
   ############################################# Nix-ld #############################################
   ##################################################################################################

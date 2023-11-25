@@ -1,18 +1,19 @@
-{ config, pkgs, ... }: let
-  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-
-  hyprland = (import flake-compat {
-    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
-  }).defaultNix;
-in {
+{ config, pkgs, ... }:
+{
     imports = [
-    hyprland.homeManagerModules.default
     ./hyprland.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "halfarne";
   home.homeDirectory = "/home/halfarne";
+
+  #nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+                "electron-24.8.6"
+              ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

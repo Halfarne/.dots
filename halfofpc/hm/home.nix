@@ -129,6 +129,8 @@ in {
   programs.bash.enable = true;
   programs.bash.shellAliases = {
     ls = "ls --color=auto";
+    ll = "ls -la --color=auto";
+    ".." = "cd ..";
     please = "doas";
     c = "clear";
     ipv6 = "ip -6 addr show scope global";

@@ -1,0 +1,34 @@
+#zoom
+set zoom-step 5
+map <C-n> zoom out
+map <C-m> zoom in
+
+#clipboard
+set selection-clipboard clipboard
+
+set incremental-search "true"
+
+set font "Fira Code NF"
+
+set adjust-open "width"
+
+set window-title-basename "true"
+
+set statusbar-basename "true"
+
+set guioptions none
+
+# colors
+
+set default-bg "#001821"
+set default-fg "#cecfdf"
+set recolor-darkcolor "#cecfdf"
+set recolor-lightcolor "#001821"
+set highlight-color "#ecad7c"
+set highlight-active-color "#54dcff"
+set inputbar-bg "#001821"
+set inputbar-fg "#cecfdf"
+
+set recolor true
+map i recolor
+map <C-Space> toggle_statusbar

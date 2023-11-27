@@ -62,18 +62,18 @@
         {wayland.windowManager.hyprland.enable = true;}
         ];
       };
-     # "elektrikar@halfofwork" = home-manager.lib.homeManagerConfiguration {
-     #   pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-     #   extraSpecialArgs = {inherit inputs outputs;};
-     #   # > Our main home-manager configuration file <
-     #   modules = [./halfofwork/hm/home.nix];
-     # };
-     # "halfarne@halfofraspberry" = home-manager.lib.homeManagerConfiguration {
-     #   pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-     #   extraSpecialArgs = {inherit inputs outputs;};
-     #   # > Our main home-manager configuration file <
-     #   modules = [./halfofraspberry/hm/home.nix];
-     # };
+     #  "@halfofwork" = home-manager.lib.homeManagerConfiguration {
+     #    pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+     #    extraSpecialArgs = {inherit inputs outputs;};
+     #    # > Our main home-manager configuration file <
+     #    modules = [./halfofwork/hm/home.nix];
+     #  };
+      "halfarne@halfofraspberry" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        # > Our main home-manager configuration file <
+        modules = [./halfofraspberry/hm/home.nix]; #home-manager --extra-experimental-features "nix-command flakes auto-allocate-uids impure-env" switch --flake ./#halfarne@halfofraspberry
+      };
     };
   };
 }

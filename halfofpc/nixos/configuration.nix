@@ -277,20 +277,11 @@
 	    # gtk portal needed to make gtk apps happy
 	    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	  };
-
-
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    nvidiaPatches = true;
-  };
-
-
   # KDEconnect
   #programs.kdeconnect.enable = true;
 
-  # Java
-  programs.java.enable = true;
+  # Java - 19
+  #programs.java.enable = true;
 
   # Steam
   programs.steam = {

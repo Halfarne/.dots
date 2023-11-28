@@ -31,7 +31,8 @@ require('packer').startup(function(use)
   --use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
   use 'brenoprata10/nvim-highlight-colors'
-  use "lukas-reineke/indent-blankline.nvim"
+  use {"lukas-reineke/indent-blankline.nvim", main = "ibl"}
+  use 'lervag/vimtex'
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -105,16 +106,14 @@ vim.o.completeopt = 'menuone,noselect'
 
 vim.opt.termguicolors = true
 vim.cmd("colorscheme mytheme")
+vim.cmd("set clipboard+=unnamedplus")
+vim.cmd("syntax enable")
 
----------------------------------------------------BLANK LINE-
-vim.opt.list = true
-vim.opt.listchars:append "space:⋅"
-vim.opt.listchars:append "eol:↴"
+vim.cmd([[let g:vimtex_view_method = 'zathura']])
+vim.cmd([[let g:vimtex_compiler_method = 'generic']])
+vim.cmd([[let g:vimtex_compiler_generic = {\ 'command': 'ls *.tex | entr -c tectonic /_ --synctex --keep-logs',\}]])
 
-require("indent_blankline").setup {
-    show_end_of_line = true,
-    space_char_blankline = " ",
-}
+
 ---------------------------------------------------LUALINE-
 
 require('lualine').setup {
@@ -265,4 +264,13 @@ end
   map("n", "b", ":tabnew term://bash<CR>", { silent = true })
   map("n", "c", ":tabclose<CR>", { silent = true })
   map("t", ",c", "exit<CR>", { silent = true })
-  map('v', '<C-C>', "<cmd>:aunmenu PopUp.copy<CR>")
+  vim.keymap.set({'n'}, '<C-c>', '"+y$')
+-- Current selection (visual mode)
+vim.keymap.set({'v'}, '<C-c>', '"+y')
+
+-- Cutting to system clipboard
+-- From current cursor position to EOL (normal mode)
+vim.keymap.set({'n'}, '<C-x>', '"+d$')
+-- Current selection (visual mode)
+vim.keymap.set({'v'}, '<C-x>', '"+d')
+

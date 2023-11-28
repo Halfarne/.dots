@@ -37,7 +37,7 @@
     rpi-imager
     openscad
     librecad
-    spotdl
+    #spotdl
     vlc
     iamb
     vimpc
@@ -61,6 +61,7 @@
     wl-clipboard
     mangohud
     tela-circle-icon-theme
+    tectonic
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

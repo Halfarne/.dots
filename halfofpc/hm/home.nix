@@ -108,6 +108,29 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+
+    EGL_PLATFORM = "wayland";
+
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+    XCURSOR_SIZE = "24";
+
+    LIBVA_DRIVER_NAME = "nvidia";
+    XDG_SESSION_TYPE = "wayland";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    
+    GDK_BACKEND = "wayland";
+                          
+    MOZ_DISABLE_RDD_SANDBOX = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+                          
+    NVD_LOG = "1";
+    NVD_MAX_INSTANCES = "10";
+    NVD_BACKEND = "egl";
+                          
+                          
+    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_STYLE_OVERRIDE = "kvantum";
   };
 
   nixpkgs.overlays = [ (self: super: { bndg = super.callPackage ./packages/breeze-noir-dark-gtk {}; }) ];
@@ -155,7 +178,7 @@
 
   programs.starship.enableBashIntegration = true;
 
-  home.file.".hyprinitrc".source = ./config/.hyprinitrc ;
+  home.file.".hyprinitrc.sh".source = ./config/.hyprinitrc ;
   home.file.".config/autostart.sh".source = ./config/autostart.sh ;
 #hyprpaper --config ~/.config/plocha.conf 
   home.file.".config/plocha.jpg".source = ./config/plocha.jpg ;
@@ -209,6 +232,20 @@
        format = "[$symbol$state( \($name\))]($style)";
      };
   };
+
+
+  
+  systemd.user.services = {
+  StartWM = {
+    Unit = {
+      Description = "Start Hyprland";
+    };
+
+    Service = {
+      ExecStart = "/home/halfarne/.hyprinitrc.sh";
+    };
+  };
+};
 
 
   # Let Home Manager install and manage itself.

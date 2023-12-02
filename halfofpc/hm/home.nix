@@ -179,8 +179,8 @@
   programs.starship.enableBashIntegration = true;
 
   home.file.".hyprinitrc.sh".source = ./config/.hyprinitrc ;
-  home.file.".config/autostart.sh".source = ./config/autostart.sh ;
-#hyprpaper --config ~/.config/plocha.conf 
+  #home.file.".config/autostart.sh".source = ./config/autostart.sh ;
+  #hyprpaper --config ~/.config/plocha.conf 
   home.file.".config/plocha.jpg".source = ./config/plocha.jpg ;
 
   #services.dunst.enable = true;
@@ -232,21 +232,6 @@
        format = "[$symbol$state( \($name\))]($style)";
      };
   };
-
-
-  
-  systemd.user.services = {
-  StartWM = {
-    Unit = {
-      Description = "Start Hyprland";
-    };
-
-    Service = {
-      ExecStart = "/home/halfarne/.hyprinitrc.sh";
-    };
-  };
-};
-
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

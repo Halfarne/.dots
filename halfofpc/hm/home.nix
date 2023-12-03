@@ -190,7 +190,7 @@
 
   #programs.rofi.enable = true;
   home.file.".config/rofi/config.rasi".source = ./config/config.rasi ;
-  home.file.".config/rofi/themes/mujstyl.rasi".source = ./config/moje.rasi ;
+  home.file.".config/rofi/themes/moje.rasi".source = ./config/moje.rasi ;
   home.file.".config/rofi/rofi-power-menu".source = ./config/rofi-power-menu ;
 
   #programs.zathura.enable = true;

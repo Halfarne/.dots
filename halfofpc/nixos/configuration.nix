@@ -10,7 +10,7 @@
   boot.loader.systemd-boot.enable = true;
   #boot.loader.grub.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.loader.efi.efiSysMountPoint = "/boot";
 
   # NVIDIA
   nixpkgs.config.allowUnfree = true;
@@ -195,17 +195,17 @@
 
      rshell
 
-     lutris
+     #lutris
      steam
-     steamtinkerlaunch
-     prismlauncher
+     #steamtinkerlaunch
+     #prismlauncher
      dxvk
      #wineWowPackages.unstable
      wineWowPackages.waylandFull
      winetricks
      mangohud
 
-     obsidian
+     #obsidian
 
      nvidia-vaapi-driver
      libva
@@ -214,36 +214,36 @@
      wbg
      wl-clipboard
 
-     tela-circle-icon-theme
-     rofi-wayland
-     firefox-wayland
-     iamb
+     #tela-circle-icon-theme
+     #rofi-wayland
+     #firefox-wayland
+     #iamb
      qt5ct
      libsForQt5.qtstyleplugin-kvantum
 
-     monocraft
+     #monocraft
 
      neovim
-     grim
-     slurp
+     #grim
+     #slurp
 
-     pamixer
-     pulsemixer
+     #pamixer
+     #pulsemixer
 
-     mpv
-     vimpc
+     #mpv
+     #vimpc
 
-     onlyoffice-bin
+     #onlyoffice-bin
      zathura
 
      jmtpfs
      mtpfs
 
-     freecad
-     openscad
-     librecad
-     eagle
-     prusa-slicer
+     #freecad
+     #openscad
+     #librecad
+     #eagle
+     #prusa-slicer
  
      blueman
   ];
@@ -391,7 +391,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   #system.stateVersion = config.system.nixos.22.11; # Did you read the comment?
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
 

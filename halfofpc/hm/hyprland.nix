@@ -1,13 +1,13 @@
 { config, pkgs, ... }: 
 {
 wayland.windowManager.hyprland.enable = true;
-wayland.windowManager.hyprland.enableNvidiaPatches = true;
 wayland.windowManager.hyprland.extraConfig = ''
 
 monitor=DP-1,1920x1080@60,1920x1080,1
 ##nitor=DP-2, 1920x1080, auto, 1
 
 exec-once = ~/.config/autostart.sh
+exec-once = wbg ~/.config/plocha.jpg
 
     input {
     kb_layout = cz

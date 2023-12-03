@@ -40,7 +40,7 @@
   fileSystems."/mnt/500G-ssd" =
     { device = "/dev/disk/by-uuid/57A11A4670A755AC";
       fsType = "ntfs"; 
-      options = [ "rw" "uid=1001" "gid=100" "umask=0022" "fmask=0022" ];
+      options = [ "rw" "uid=1000" "gid=100" "umask=0022" "fmask=0022" ];
     };
 
   #ext3
@@ -85,6 +85,7 @@
     description = "halfarne";
     extraGroups = [ "networkmanager" "wheel" "audio" "disk" "video" "input" "dialout" "render"];
     packages = with pkgs; [];
+    uid = 1000;
   };
 
   environment.shellAliases = {
@@ -108,7 +109,7 @@
      }];
 
   # Pam oauth
-  security.pam.oath.enable = true;
+  #security.pam.oath.enable = true;
   #security.pam.enableOTPW = true;
 
 
@@ -263,7 +264,7 @@
   ##################################################################################################
 
   # Fonts
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
    (nerdfonts.override { fonts = [ "Mononoki" "Hack"]; })
   ];
 
@@ -276,6 +277,7 @@
 	    wlr.enable = true;
 	    # gtk portal needed to make gtk apps happy
 	    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+	    config.common.default = "*";
 	  };
   # KDEconnect
   #programs.kdeconnect.enable = true;
@@ -361,7 +363,7 @@
     };
   };
 
-  services.syncthing.extraOptions.gui = {
+  services.syncthing.settings.gui = {
     user = "halfarne";
     password = "halfarne";
   };

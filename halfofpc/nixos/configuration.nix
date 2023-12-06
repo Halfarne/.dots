@@ -23,6 +23,7 @@
 
   hardware.nvidia.modesetting.enable = true;
   programs.xwayland.enable = true;
+  hardware.nvidia.open = true;
 
   ############################### Linux Zen kernel #################################
   ##################################################################################

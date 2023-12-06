@@ -1,4 +1,4 @@
-{ config, pkgs, lib,  ... }:
+{ config, pkgs, lib, inputs,  ... }:
 {
   imports =
     [
@@ -280,6 +280,11 @@
 	    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	    config.common.default = "*";
 	  };
+
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
   # KDEconnect
   #programs.kdeconnect.enable = true;
 

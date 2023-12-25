@@ -3,8 +3,8 @@
 wayland.windowManager.hyprland.enable = true;
 wayland.windowManager.hyprland.extraConfig = ''
 
-monitor=DP-1,1920x1080@60,1920x1080,1
-##nitor=DP-2, 1920x1080, auto, 1
+monitor=DP-1,2560x1440@164,2560x1440,1
+##nitor=DP-2, 1920x1080, auxo, 1
 
 exec-once = ~/.config/autostart.sh
 exec-once = wbg ~/.config/plocha.jpg

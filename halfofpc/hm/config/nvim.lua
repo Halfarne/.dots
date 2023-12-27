@@ -34,6 +34,8 @@ require('packer').startup(function(use)
   use {"lukas-reineke/indent-blankline.nvim", main = "ibl"}
   use 'lervag/vimtex'
 
+  use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
+
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
@@ -104,14 +106,19 @@ vim.g.maplocalleader = ' '
 
 vim.o.completeopt = 'menuone,noselect'
 
-vim.opt.termguicolors = true
-vim.cmd("colorscheme mytheme")
+--vim.opt.termguicolors = true
+--vim.cmd("colorscheme mytheme")
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("syntax enable")
 
 vim.cmd([[let g:vimtex_view_method = 'zathura']])
 vim.cmd([[let g:vimtex_compiler_method = 'generic']])
-vim.cmd([[let g:vimtex_compiler_generic = {\ 'command': 'ls *.tex | entr -c tectonic /_ --synctex --keep-logs',\}]])
+--vim.cmd([[let g:vimtex_compiler_generic = {\ 'command': 'ls *.tex | entr -c tectonic /_ --synctex --keep-logs',\}]])
+--
+
+local pywal = require('pywal')
+
+pywal.setup()
 
 
 ---------------------------------------------------LUALINE-
@@ -119,7 +126,7 @@ vim.cmd([[let g:vimtex_compiler_generic = {\ 'command': 'ls *.tex | entr -c tect
 require('lualine').setup {
   ortions = {
     icons_enabled = false,
-    theme = 'gruvbox_dark',
+    theme = 'pywal-nvim',
     component_separators = '|',
     section_separators = '',
   },

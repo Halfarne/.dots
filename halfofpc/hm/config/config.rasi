@@ -22,3 +22,4 @@ configuration {
 //@theme "/home/halfarne-wayland/.config/rofi/themes/moje.rasi"
 //@theme "/home/halfarne/.config/rofi/themes/moje.rasi"
 @theme "/home/halfarne/.config/rofi/themes/moje.rasi"
+@import "~/.cache/wal/colors-rofi-dark"

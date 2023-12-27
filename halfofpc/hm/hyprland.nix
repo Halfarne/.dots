@@ -89,6 +89,10 @@ device:epic mouse V1 {
 #windowrule = opacity 1.0 override 1.0 override,^(freecad)$
 #windowrule = opacity 0.8 override 0.65 override,^(kitty)$
 
+windowrulev2 = stayfocused, title:^()$,class:^(steam)$
+windowrulev2 = minsize 1 1, title:^()$,class:^(steam)$
+
+
 $mainMod = SUPER
 
 

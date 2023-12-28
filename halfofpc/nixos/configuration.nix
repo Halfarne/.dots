@@ -207,8 +207,8 @@
      #steamtinkerlaunch
      #prismlauncher
      dxvk
-     #wineWowPackages.unstable
-     wineWowPackages.waylandFull
+     wineWowPackages.unstable
+     #wineWowPackages.waylandFull
      winetricks
      mangohud
 
@@ -286,10 +286,10 @@
 	    config.common.default = "*";
 	  };
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  };
+#  programs.hyprland = {
+#    enable = true;
+#    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+#  };
   # KDEconnect
   #programs.kdeconnect.enable = true;
 

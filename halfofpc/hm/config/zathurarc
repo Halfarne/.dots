@@ -20,7 +20,7 @@ set guioptions none
 
 # colors
 
-set default-bg "#001821"
+set default-bg "#010205"
 set default-fg "#cecfdf"
 set recolor-darkcolor "#cecfdf"
 set recolor-lightcolor "#001821"

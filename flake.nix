@@ -44,7 +44,7 @@
      # dílna
      # halfowork = nixpkgs.lib.nixosSystem {
      #   specialArgs = {inherit inputs outputs;};
-     #   modules = [./halfowork/configuration.nix];
+     #   modules = [./halfofwork/configuration.nix];
      # };
     };
 
@@ -61,7 +61,7 @@
         {wayland.windowManager.hyprland.enable = true;}
         ];
       };
-     #  "@halfofwork" = home-manager.lib.homeManagerConfiguration {
+     #  "pracant@halfofwork" = home-manager.lib.homeManagerConfiguration {
      #    pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
      #    extraSpecialArgs = {inherit inputs outputs;};
      #    # > Our main home-manager configuration file <

@@ -153,7 +153,7 @@ vim.cmd("set expandtab")
 vim.cmd("set smartindent")
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vim', 'nix', 'json' , 'bash'},
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vim', 'nix', 'json' , 'bash', 'css', 'scss', 'yuck', 'tex'},
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },

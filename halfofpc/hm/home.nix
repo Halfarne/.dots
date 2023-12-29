@@ -63,6 +63,7 @@
     mangohud
     tela-circle-icon-theme
     tectonic
+    qbittorrent
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -237,6 +238,9 @@
   programs.pywal.enable = true;
 
   #programs.waybar.enable = true;
+  programs.eww.enable = true;
+  programs.eww.package = pkgs.eww-wayland;
+  programs.eww.configDir = ./config/eww ;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

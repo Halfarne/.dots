@@ -1,0 +1,15 @@
+(defwindow bar
+  :stacking "fg"
+  :windowtype "normal"
+  :exclusive true
+  :monitor 0
+  :wm-ignore true
+  :geometry (geometry :width "99.5%" :height "2.1%" :anchor "top center")
+  (layout))
+
+(defwidget layout []
+  (label 
+            :text 'printf("${time.hour}::${time.min}", int hodina, int minuta)'))
+
+(defpoll time :interval "5s"
+  `date +'{"hour":"%H","min":"%M"}'`)

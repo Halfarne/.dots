@@ -206,6 +206,7 @@
      steam
      #steamtinkerlaunch
      #prismlauncher
+     gamescope
      dxvk
      wineWowPackages.unstable
      #wineWowPackages.waylandFull
@@ -286,21 +287,33 @@
 	    config.common.default = "*";
 	  };
 
-#  programs.hyprland = {
-#    enable = true;
-#    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-#  };
-  # KDEconnect
-  #programs.kdeconnect.enable = true;
-
-  # Java - 19
-  #programs.java.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
 
   # Steam
   programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true;
-  dedicatedServer.openFirewall = true;
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        xorg.libXcursor
+        xorg.libXi
+        xorg.libXinerama
+        xorg.libXScrnSaver
+        libpng
+        libpulseaudio
+        libvorbis
+        stdenv.cc.cc.lib
+        libkrb5
+        keyutils
+      ];
+    };
   };
 
 

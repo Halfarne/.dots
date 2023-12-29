@@ -145,6 +145,8 @@
   home.file.".local/share/fonts/SpaceMono-Bold.ttf".source = ./fonts/SpaceMono-Bold.ttf ;
   home.file.".local/share/fonts/SpaceMono-BoldItalic.ttf".source = ./fonts/SpaceMono-BoldItalic.ttf ;
   home.file.".local/share/fonts/SpaceMono-Italic.ttf".source = ./fonts/SpaceMono-Italic.ttf ;
+
+  home.file.".local/share/fonts/nasalization.otf;".source = ./fonts/nasalization.otf;
   
   gtk.font = {
     name = "Space Mono";

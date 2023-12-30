@@ -9,6 +9,7 @@ monitor=DP-1,2560x1440@164,2560x1440,1
 
 exec-once = ~/.config/autostart.sh
 exec-once = wbg ~/.config/plocha.jpg
+exec-once = eww open bar
 
     input {
     kb_layout = cz

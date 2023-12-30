@@ -64,6 +64,8 @@
     tela-circle-icon-theme
     tectonic
     qbittorrent
+    jq
+    socat
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -181,7 +183,7 @@
 
   programs.starship.enableBashIntegration = true;
 
-  home.file.".hyprinitrc.sh".source = ./config/.hyprinitrc ;
+  #home.file.".hyprinitrc.sh".source = ./config/.hyprinitrc ;
   #home.file.".config/autostart.sh".source = ./config/autostart.sh ;
   #hyprpaper --config ~/.config/plocha.conf 
   home.file.".config/plocha.jpg".source = ./config/plocha.jpg ;

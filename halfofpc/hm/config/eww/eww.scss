@@ -3,14 +3,15 @@
 
 * { all: unset; }
 
-.bar {
-  font-family: Mononoki;
+.bar_class {
+  font-family: "Space Mono";
   background-color: $color0;
   color: $foreground;
   padding: 0px 10px;
   font-size: 1.0em;
-  border-color: $color11; 
-  border-width: 3px;
+  font-weight: bold;
+  border-color: $color1; 
+  border-width: 5px;
   border-style: solid;
 
 }

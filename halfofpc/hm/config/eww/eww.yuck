@@ -4,12 +4,20 @@
   :exclusive true
   :monitor 0
   :wm-ignore true
-  :geometry (geometry :width "99.5%" :height "2.1%" :anchor "top center")
-  (layout))
+  :geometry (geometry :y "5px" :width "9%" :height "2.1%" :anchor "top center")
+  (layout)
+  )
 
 (defwidget layout []
-  (label 
-            :text 'printf("${time.hour}::${time.min}", int hodina, int minuta)'))
+    (box :class "bar_class"
+       :orientation "h"
+  (timelabel)
+    ))
 
-(defpoll time :interval "5s"
-  `date +'{"hour":"%H","min":"%M"}'`)
+(defwidget timelabel []
+  (label 
+            :text '[ ${time.hour}:${time.min}:${time.sec} ]')
+)
+
+(defpoll time :interval "1s"
+  `date +'{"hour":"%H","min":"%M","sec":"%S"}'`)

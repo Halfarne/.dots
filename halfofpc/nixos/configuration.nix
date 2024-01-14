@@ -373,7 +373,7 @@
    startWhenNeeded = true; 
   };
   systemd.services.mpd.environment = {
-  XDG_RUNTIME_DIR = "/run/user/1001";
+  XDG_RUNTIME_DIR = "/run/user/1000";
   };
 
   

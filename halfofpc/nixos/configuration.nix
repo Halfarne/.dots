@@ -343,7 +343,7 @@
      nix_shell = {
        symbol = "❄(bold white)";
        style = "bold blue";
-       format = "[$symbol$state( \($name\))]($style)";
+       format = " [$symbol$state( \($name\))]($style)";
      };
   };
 

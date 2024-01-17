@@ -171,10 +171,9 @@
     c = "clear";
     ipv6 = "ip -6 addr show scope global";
     ssh = "kitty +kitten ssh";
+    img = "kitty +kittent icat";
     time = "timedatectl | grep 'Local'";
 
-    nixupd = "please  cp ~/.dotfiles/conf.nix /etc/nixos/conf.nix";
-    nixreb = "please nixos-rebuild switch";
       };
   programs.bash.bashrcExtra = 
     "
@@ -235,7 +234,7 @@
      nix_shell = {
        symbol = "❄(bold white)";
        style = "bold blue";
-       format = "[$symbol$state( \($name\))]($style)";
+       format = " [$symbol$state( \($name\))]($style)";
      };
   };
 

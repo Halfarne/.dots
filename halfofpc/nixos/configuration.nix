@@ -33,7 +33,8 @@
   ############################### Linux Zen kernel #################################
   ##################################################################################
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  #boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.kernelParams = ["msr.allow_writes=on" "nouveau.config=NvGspRm=1"];
 
@@ -203,10 +204,7 @@
 
      rshell
 
-     #lutris
      steam
-     #steamtinkerlaunch
-     #prismlauncher
      gamescope
      dxvk
      wineWowPackages.unstable
@@ -214,52 +212,31 @@
      winetricks
      mangohud
 
-     #obsidian
 
-     nvidia-vaapi-driver
+     #nvidia-vaapi-driver
      libva
      libinput
 
      wbg
      wl-clipboard
 
-     #tela-circle-icon-theme
-     #rofi-wayland
-     #firefox-wayland
-     #iamb
      qt5ct
      libsForQt5.qtstyleplugin-kvantum
 
      #monocraft
 
      neovim
-     #grim
-     #slurp
-
-     #pamixer
-     #pulsemixer
-
-     #mpv
-     #vimpc
-
-     #onlyoffice-bin
      zathura
 
      jmtpfs
      mtpfs
 
-     #freecad
-     #openscad
-     #librecad
-     #eagle
-     #prusa-slicer
- 
      blueman
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
-                "electron-24.8.6"
-              ];
+                "electron-25.9.0"
+  ];
 
   ############################################# Nix-ld #############################################
   ##################################################################################################

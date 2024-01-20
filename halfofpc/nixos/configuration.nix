@@ -14,7 +14,7 @@
 
   # NVIDIA
   nixpkgs.config.allowUnfree = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "nouveau" ];
   hardware.opengl = {
     enable = true;
     driSupport = true; 
@@ -25,17 +25,17 @@
       ];
     };
 
-  hardware.nvidia.modesetting.enable = true;
+#  hardware.nvidia.modesetting.enable = true;
   programs.xwayland.enable = true;
-  hardware.nvidia.open = false;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
+#  hardware.nvidia.open = false;
+#  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
 
   ############################### Linux Zen kernel #################################
   ##################################################################################
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
-  boot.kernelParams = ["msr.allow_writes=on"];
+  boot.kernelParams = ["msr.allow_writes=on" "nouveau.config=NvGspRm=1"];
 
   #################################### Disks #######################################
   ##################################################################################
@@ -191,6 +191,7 @@
      bashmount
      exfatprogs
      tmux
+     mesa
 
      #minicom
      #libusb1

@@ -22,6 +22,7 @@
     pkgs.firefox-wayland
     pkgs.cage
     pkgs.neovim
+    pkgs.maliit-keyboard
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -47,12 +48,13 @@ systemd.user.services = {
     };
 
     Service = {
-      ExecStart = "${pkgs.cage}/bin/cage ${pkgs.firefox-wayland}/bin/firefox-wayland";
+      ExecStart = "/home/halfarne/.start_cage.sh";
     };
   };
 };
 
 home.file.".config/nix/nix.conf".source = ./config/nix.conf ;
+home.file.".start_cage.sh".source = ./config/start_cage.sh ;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

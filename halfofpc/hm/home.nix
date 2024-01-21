@@ -12,7 +12,7 @@
   nixpkgs.config.allowUnfreePredicate = _: true;
 
   nixpkgs.config.permittedInsecurePackages = [
-                "electron-24.8.6"
+                "electron-25.9.0"
               ];
 
   # This value determines the Home Manager release that your configuration is
@@ -48,7 +48,7 @@
     lutris
     steam
     prismlauncher
-    #obsidian
+    obsidian
     wbg
     qt5ct
     libsForQt5.qtstyleplugin-kvantum
@@ -120,19 +120,19 @@
     _JAVA_AWT_WM_NONREPARENTING = "1";
     XCURSOR_SIZE = "24";
 
-    #LIBVA_DRIVER_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
-    #__GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    #WLR_NO_HARDWARE_CURSORS = "1";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    WLR_NO_HARDWARE_CURSORS = "1";
     
     GDK_BACKEND = "wayland";
                           
     MOZ_DISABLE_RDD_SANDBOX = "1";
     MOZ_ENABLE_WAYLAND = "1";
                           
-    #NVD_LOG = "1";
-    #NVD_MAX_INSTANCES = "10";
-    #NVD_BACKEND = "egl";
+    NVD_LOG = "1";
+    NVD_MAX_INSTANCES = "10";
+    NVD_BACKEND = "egl";
                           
                           
     QT_QPA_PLATFORMTHEME = "qt5ct";

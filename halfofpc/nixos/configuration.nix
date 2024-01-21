@@ -14,7 +14,7 @@
 
   # NVIDIA
   nixpkgs.config.allowUnfree = true;
-  services.xserver.videoDrivers = [ "nouveau" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl = {
     enable = true;
     driSupport = true; 
@@ -25,10 +25,10 @@
       ];
     };
 
-#  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.modesetting.enable = true;
   programs.xwayland.enable = true;
-#  hardware.nvidia.open = false;
-#  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
+  hardware.nvidia.open = false;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
 
   ############################### Linux Zen kernel #################################
   ##################################################################################
@@ -36,7 +36,7 @@
   #boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.kernelParams = ["msr.allow_writes=on" "nouveau.config=NvGspRm=1"];
+  boot.kernelParams = ["msr.allow_writes=on" ];
 
   #################################### Disks #######################################
   ##################################################################################
@@ -213,7 +213,7 @@
      mangohud
 
 
-     #nvidia-vaapi-driver
+     nvidia-vaapi-driver
      libva
      libinput
 

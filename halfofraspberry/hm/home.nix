@@ -49,6 +49,8 @@ systemd.user.services = {
 
     Service = {
       ExecStart = "/home/halfarne/.start_cage.sh";
+      Restart = "always";
+      RestartSec = "10";
     };
   };
 };

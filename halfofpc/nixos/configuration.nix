@@ -44,11 +44,11 @@
   #ntfs
   boot.supportedFilesystems = [ "ntfs" ];
 
-  fileSystems."/mnt/500G-ssd" =
-    { device = "/dev/disk/by-uuid/57A11A4670A755AC";
-      fsType = "ntfs"; 
-      options = [ "rw" "uid=1000" "gid=100" "umask=0022" "fmask=0022" ];
-    };
+ # fileSystems."/mnt/500G-ssd" =
+ #   { device = "/dev/disk/by-uuid/57A11A4670A755AC";
+ #     fsType = "ntfs"; 
+ #     options = [ "rw" "uid=1000" "gid=100" "umask=0022" "fmask=0022" ];
+ #   };
 
   #ext3
   fileSystems."/mnt/1TB-hdd" =
@@ -135,7 +135,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "cs_CZ.UTF-8";
    console = {
-     font = "monocraft";
+     font = "Space Mono";
      keyMap = "cz-lat2";
    };
 

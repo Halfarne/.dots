@@ -172,6 +172,8 @@
      git
      gcc
 
+     home-manager
+
      #cargo
      #rustc
 

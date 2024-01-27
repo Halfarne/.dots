@@ -67,25 +67,10 @@
     jq
     socat
     playerctl
+    tree
+    wpgtk
 
   ];
-
-  systemd.user.services = {
-    hyprstart = {
-      Unit = {
-        Description = "autostart script for hyprland";
-      };
-  
-      Service = {
-        ExecStart = "/home/halfarne/.start_hypr.sh";
-        Restart = "always";
-        RestartSec = "10";
-      };
-    };
-  };
-  
-  home.file.".start_hypr.sh".source = ./config/start_hypr.sh ;
-
 
   home.sessionVariables = {
     EDITOR = "nvim";

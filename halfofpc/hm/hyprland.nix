@@ -5,13 +5,17 @@ wayland.windowManager.hyprland.enable = true;
 wayland.windowManager.hyprland.extraConfig = ''
 
 monitor=DP-1,2560x1440@164,2560x1440,1
-##nitor=DP-2, 1920x1080, auxo, 1
 
 exec-once = ~/.config/autostart.sh
 exec-once = wbg ~/.config/plocha.jpg
 exec-once = eww open bar
 
-    input {
+exec-once = ~/.config/hypr/barvy.sh
+
+source=~/.config/hypr/barvy.conf
+
+
+input {
     kb_layout = cz
 
     follow_mouse = 1
@@ -27,8 +31,8 @@ general {
     gaps_in = 5
         gaps_out = 5
     border_size = 5
-    col.active_border = rgba(2d6a86ff)
-    col.inactive_border = rgba(192c4dcc)
+    col.active_border = $aktivni
+    col.inactive_border = $neaktivni
     layout = dwindle
 }
 

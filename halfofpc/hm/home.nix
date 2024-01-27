@@ -167,6 +167,7 @@
   home.file.".config/nvim/colors/mytheme.vim".source = ./config/mytheme.vim ;
 
   home.file.".tmux.conf".source = ./config/tmux.conf ;
+  home.file.".config/hypr/barvy.sh".source = ./config/barvy.sh ;
 
     # Starship
   programs.starship.enable = true;

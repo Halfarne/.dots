@@ -68,7 +68,6 @@
     socat
     playerctl
     tree
-    wpgtk
 
   ];
 

@@ -233,6 +233,8 @@
      jmtpfs
      mtpfs
 
+     stig
+
      blueman
   ];
 
@@ -271,6 +273,8 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
+
+  services.transmission.enable = true;
 
   # Steam
   programs.steam = {

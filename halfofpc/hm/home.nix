@@ -68,6 +68,7 @@
     socat
     playerctl
     tree
+    alacritty
 
   ];
 
@@ -150,6 +151,7 @@
 
   #services.dunst.enable = true;
   home.file.".config/dunst/dunstrc".source = ./config/dunstrc ;
+
   #programs.kitty.enable = true;
   home.file.".config/kitty/kitty.conf".source = ./config/kitty.conf ;
 

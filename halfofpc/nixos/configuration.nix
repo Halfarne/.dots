@@ -44,19 +44,19 @@
   #ntfs
   boot.supportedFilesystems = [ "ntfs" ];
 
- # fileSystems."/mnt/500G-ssd" =
- #   { device = "/dev/disk/by-uuid/57A11A4670A755AC";
- #     fsType = "ntfs"; 
- #     options = [ "rw" "uid=1000" "gid=100" "umask=0022" "fmask=0022" ];
- #   };
+   fileSystems."/mnt/500G-ssd" =
+     { device = "/dev/disk/by-uuid/57A11A4670A755AC";
+       fsType = "ntfs"; 
+       options = [ "rw" "uid=1000" "gid=100" "umask=0022" "fmask=0022" ];
+     };
 
   #ext3
-  fileSystems."/mnt/1TB-hdd" =
-    { device = "/dev/disk/by-uuid/29788cf6-33b0-45a7-8ee0-a5368cb4e723";
-      fsType = "ext3"; 
-      options = ["defaults" "rw"];
-    };
-
+#  fileSystems."/mnt/1TB-hdd" =
+#    { device = "/dev/disk/by-uuid/29788cf6-33b0-45a7-8ee0-a5368cb4e723";
+#      fsType = "ext3"; 
+#      options = ["defaults" "rw"];
+#    };
+#
    # ...
    #fileSystems."/nix" = {
    #  device = "/dev/disk/by-uuid/019e842a-5d1b-4836-8170-d67230765e9b";

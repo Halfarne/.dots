@@ -69,6 +69,7 @@
     playerctl
     tree
     alacritty
+    arduino-cli
 
   ];
 
@@ -99,11 +100,13 @@
     QT_STYLE_OVERRIDE = "kvantum";
   };
 
-  nixpkgs.overlays = [ (self: super: { bndg = super.callPackage ./packages/breeze-noir-dark-gtk {}; }) ];
+  nixpkgs.overlays = [ (self: super: { gruvbox = super.callPackage ./packages/gruvbox {}; }) ];
 
   gtk.enable = true;
-  gtk.theme.package = pkgs.bndg;
-  gtk.theme.name = "Breeze-Noir-Dark-GTK";
+  gtk.theme.package = pkgs.gruvbox;
+  gtk.theme.name = "Gruvbox-Dark";
+
+  qt.enable = true;
 
   home.file.".local/share/fonts/SpaceMono-Regular.ttf".source = ./fonts/SpaceMono-Regular.ttf ;
   home.file.".local/share/fonts/SpaceMono-Bold.ttf".source = ./fonts/SpaceMono-Bold.ttf ;

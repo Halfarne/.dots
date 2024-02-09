@@ -5,14 +5,14 @@
 , gtk-engine-murrine
 }:
 stdenvNoCC.mkDerivation rec {
-  pname = "breeze-noir-dark-gtk-theme";
+  pname = "gruvbox";
   version = "nwm";
 
   src = fetchFromGitHub {
-    owner = "L4ki";
-    repo = "Breeze-Noir-Dark-GTK";
-    rev = "e7c82315744efa4a42e68d465449b4e12558fed6";
-    sha256 = "sha256-b5mSv7d1ZQAOt+JLHOjY8AKGlZJtZOI9jn3SsDuzL6c=";
+    owner = "Fausto-Korpsvart";
+    repo = "Gruvbox-GTK-Theme";
+    rev = "c0b7fb501938241a3b6b5734f8cb1f0982edc6b4";
+    sha256 = "sha256-Y+6HuWaVkNqlYc+w5wLkS2LpKcDtpeOpdHnqBmShm5Q=";
   };
 
   propagatedUserEnvPkgs = [
@@ -27,6 +27,8 @@ stdenvNoCC.mkDerivation rec {
 
   installPhase = ''
     runHook preInstall
+    mkdir -p $out/share/themes
+    cp -a themes/* $out/share/themes
     runHook postInstall
   '';
 

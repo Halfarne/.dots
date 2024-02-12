@@ -1,14 +1,4 @@
 { config, pkgs, lib, inputs,  ... }:
-let
-     old_gimp_git = import (builtins.fetchGit {
-         # Descriptive name to make the store path easier to identify
-         name = "revision_with_gimp_34";
-         url = "https://github.com/NixOS/nixpkgs/";
-         ref = "refs/heads/nixpkgs-unstable";
-         rev = "9957cd48326fe8dbd52fdc50dd2502307f188b0d";
-     }) {};
-
-in
 {
   imports =
     [
@@ -178,9 +168,6 @@ in
   
   nixpkgs.config = {
       packageOverrides = pkgs: {
-        old_gimp = import old_gimp_git {
-          config = config.nixpkgs.config;
-        };
         steam = pkgs.steam.override {
             extraPkgs = pkgs: with pkgs; [
                 xorg.libXcursor

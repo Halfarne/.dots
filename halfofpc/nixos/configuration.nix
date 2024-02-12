@@ -215,8 +215,6 @@
      tmux
      mesa
 
-     old_gimp.gimp
-
      #minicom
      #libusb1
      #openocd
@@ -348,7 +346,7 @@
 
   services.mpd = {
    enable = true;
-   musicDirectory = "/mnt/1TB-hdd/Hudba";
+   musicDirectory = "/home/halfarne/Syncthing/Hudba";
    user = "halfarne";
    extraConfig = ''
       audio_output {
@@ -369,8 +367,8 @@
     syncthing = {
         enable = true;
         user = "halfarne";
-        dataDir = "/mnt/1TB-hdd/Syncthing";    # Default folder for new synced folders
-        configDir = "/mnt/1TB-hdd/Syncthing/.config";   # Folder for Syncthing's settings and keys
+        dataDir = "/home/halfarne/Syncthing";    # Default folder for new synced folders
+        configDir = "/home/halfarne/Syncthing/.config";   # Folder for Syncthing's settings and keys
     };
   };
 

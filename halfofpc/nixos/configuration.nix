@@ -135,9 +135,11 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "cs_CZ.UTF-8";
    console = {
-     font = "Space Mono";
-     keyMap = "cz-lat2";
-   };
+     keyMap = "cz";
+     packages=[ pkgs.terminus_font ];
+     font="${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
+
+     };
 
    services.udev.extraRules = ''
     SUBSYSTEM=="usb", MODE="0666"

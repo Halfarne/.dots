@@ -70,6 +70,8 @@
     tree
     alacritty
     arduino-cli
+    steam-tui
+    steamcmd
 
   ];
 

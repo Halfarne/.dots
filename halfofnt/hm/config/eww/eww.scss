@@ -1,0 +1,35 @@
+// Import Colors from pywal
+@import '/home/halfarne/.cache/wal/colors.scss';
+
+* { all: unset; }
+
+.bar {
+  font-family: "Space Mono";
+  background-color: $color0;
+  color: $foreground;
+  padding: 0px 10px;
+  font-size: 1.0em;
+  border-color: $color1; 
+  border-width: 5px;
+  border-style: solid;
+
+}
+
+
+.song {
+  padding: 0px 10px;
+  font-size: small;
+  font-weight: bold;
+}
+
+.window {
+  padding: 10px;
+  font-size: 1.0em;
+  font-weight: bold;
+}
+
+.time {
+  padding: 0px 10px;
+  font-size: 1.0em;
+  font-weight: bold;
+}

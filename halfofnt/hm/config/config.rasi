@@ -1,0 +1,25 @@
+//@theme "/usr/share/rofi/themes/nord.rasi"
+configuration {
+ modi: "drun";
+ font: "Mononoki Nerd Font 11";
+ show-icons: true;
+ terminal: "kitty";
+}
+//@theme "/usr/share/rofi/themes/rounded-gray-dark.rasi"
+//@theme "/usr/share/rofi/themes/nord.rasi"
+//@theme "/home/halfarne/.local/share/rofi/themes/squared-everforest.rasi"
+//@theme "/home/halfarne/.local/share/rofi/themes/simple-tokyonight.rasi"
+//@theme "/home/halfarne/.local/share/rofi/themes/squared-everforest.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+//@theme "/usr/share/rofi/themes/sidebar-v2.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+//@theme "/home/halfarne/.local/share/rofi/themes/squared-everforest.rasi"
+
+//@theme "/home/halfarne-wayland/.local/share/rofi/themes/squared-everforest.rasi"
+//@theme "/usr/share/rofi/themes/rounded-gray-dark.rasi"
+//theme "/home/halfarne-wayland/.local/share/rofi/themes/squared-everforest.rasi"
+//@theme "/home/halfarne-wayland/.config/rofi/themes/moje.rasi"
+//@theme "/home/halfarne/.config/rofi/themes/moje.rasi"
+@theme "/home/halfarne/.config/rofi/themes/moje.rasi"
+@import "~/.cache/wal/colors-rofi-dark"

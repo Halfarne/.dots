@@ -51,7 +51,6 @@
   environment.shellAliases = {
       please = "doas";
       sudo = "doas";
-      nixreb = "nixos-rebuild switch --flake /etc/nixos#halfofpc";
   };
 
   programs.dconf.enable = true;
@@ -80,7 +79,7 @@
   };
 
   # Hostname
-  networking.hostName = "halfofnt"; # Define your hostname.
+  networking.hostName = "cihla"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "Europe/Prague";

@@ -40,9 +40,9 @@
      #   modules = [./halfofwork/nixos/configuration.nix];
      # };
      # notebook
-     # halfowork = nixpkgs.lib.nixosSystem {
+     # cihla = nixpkgs.lib.nixosSystem {
      #   specialArgs = {inherit inputs outputs;};
-     #   modules = [./halfofwork/nixos/configuration.nix];
+     #   modules = [./cihla/nixos/configuration.nix];
      # };
     };
 
@@ -67,11 +67,11 @@
      #    hyprland.homeManagerModules.default
      #    {wayland.windowManager.hyprland.enable = true;}
      #  };
-     #  "halfarne@halfofnt" = home-manager.lib.homeManagerConfiguration {
+     #  "halfarne@cihla" = home-manager.lib.homeManagerConfiguration {
      #    pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
      #    extraSpecialArgs = {inherit inputs outputs;};
      #    # > Our main home-manager configuration file <
-     #    modules = [./halfofnt/hm/home.nix];
+     #    modules = [./cihla/hm/home.nix];
      #    hyprland.homeManagerModules.default
      #    {wayland.windowManager.hyprland.enable = true;}
      #  };

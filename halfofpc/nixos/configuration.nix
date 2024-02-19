@@ -98,7 +98,6 @@
   environment.shellAliases = {
       please = "doas";
       sudo = "doas";
-      nixreb = "nixos-rebuild switch --flake /etc/nixos#halfofpc";
   };
 
   programs.dconf.enable = true;
@@ -371,6 +370,8 @@
         user = "halfarne";
         dataDir = "/home/halfarne/Syncthing";    # Default folder for new synced folders
         configDir = "/home/halfarne/Syncthing/.config";   # Folder for Syncthing's settings and keys
+        overrideFolders = false;
+        overrideDevices = false;
     };
   };
 

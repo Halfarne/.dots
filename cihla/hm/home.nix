@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
     imports = [
-    ./hyprland.nix
+    #./hyprland.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -32,7 +32,6 @@
     zathura
     kitty
     rofi-wayland
-    monocraft
     grim
     slurp
     rpi-imager
@@ -48,8 +47,6 @@
 
     obsidian
     wbg
-    qt5ct
-    libsForQt5.qtstyleplugin-kvantum
     eagle
     prusa-slicer
     libreoffice
@@ -58,7 +55,6 @@
     pamixer
     firefox-wayland
     wl-clipboard
-    mangohud
     tela-circle-icon-theme
     tectonic
     qbittorrent
@@ -99,25 +95,11 @@
     QT_STYLE_OVERRIDE = "kvantum";
   };
 
-  nixpkgs.overlays = [ (self: super: { gruvbox = super.callPackage ./packages/gruvbox {}; }) ];
-
-  gtk.enable = true;
-  gtk.theme.package = pkgs.gruvbox;
-  gtk.theme.name = "Gruvbox-Dark";
-
-  qt.enable = true;
-
+ 
   home.file.".local/share/fonts/SpaceMono-Regular.ttf".source = ./fonts/SpaceMono-Regular.ttf ;
   home.file.".local/share/fonts/SpaceMono-Bold.ttf".source = ./fonts/SpaceMono-Bold.ttf ;
   home.file.".local/share/fonts/SpaceMono-BoldItalic.ttf".source = ./fonts/SpaceMono-BoldItalic.ttf ;
   home.file.".local/share/fonts/SpaceMono-Italic.ttf".source = ./fonts/SpaceMono-Italic.ttf ;
-
-    
-  gtk.font = {
-    name = "Space Mono";
-    size = 11;
-  };
-  gtk.iconTheme.name = "Tela-circle-dark";
 
   programs.git = {
     enable = true;
@@ -171,7 +153,6 @@
   home.file.".config/nvim/colors/mytheme.vim".source = ./config/mytheme.vim ;
 
   home.file.".tmux.conf".source = ./config/tmux.conf ;
-  home.file.".config/hypr/barvy.sh".source = ./config/barvy.sh ;
 
     # Starship
   programs.starship.enable = true;
@@ -203,15 +184,14 @@
      };
   };
 
-  programs.pywal.enable = true;
-
-  #programs.waybar.enable = true;
   programs.eww.enable = true;
   programs.eww.package = pkgs.eww-wayland;
   programs.eww.configDir = ./config/eww ;
 
   services.mpd-mpris.enable = true;
   services.playerctld.enable = true;
+
+  progams.gh.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

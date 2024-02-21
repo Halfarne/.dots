@@ -106,19 +106,16 @@ vim.g.maplocalleader = ' '
 
 vim.o.completeopt = 'menuone,noselect'
 
---vim.opt.termguicolors = true
---vim.cmd("colorscheme mytheme")
+vim.opt.termguicolors = true
+vim.cmd("colorscheme mytheme")
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("syntax enable")
 
 vim.cmd([[let g:vimtex_view_method = 'zathura']])
 vim.cmd([[let g:vimtex_compiler_method = 'generic']])
 --vim.cmd([[let g:vimtex_compiler_generic = {\ 'command': 'ls *.tex | entr -c tectonic /_ --synctex --keep-logs',\}]])
---
 
-local pywal = require('pywal')
 
-pywal.setup()
 
 
 ---------------------------------------------------LUALINE-

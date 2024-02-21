@@ -89,10 +89,6 @@
     NVD_LOG = "1";
     NVD_MAX_INSTANCES = "10";
     NVD_BACKEND = "egl";
-                          
-                          
-    QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_STYLE_OVERRIDE = "kvantum";
   };
 
  
@@ -191,7 +187,7 @@
   services.mpd-mpris.enable = true;
   services.playerctld.enable = true;
 
-  progams.gh.enable = true;
+  programs.gh.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

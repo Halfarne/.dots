@@ -207,6 +207,9 @@
 
   # Blueman
   services.blueman.enable = true;
+  
+  #KMSCON
+  services.kmscon.enable = true;
 
   #XDG
     xdg.portal = {

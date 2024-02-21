@@ -88,12 +88,32 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "cs_CZ.UTF-8";
-   console = {
-     keyMap = "cz";
-     packages=[ pkgs.terminus_font ];
-     font="${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
+  console = {
+    keyMap = "cz";
+    packages =[ pkgs.terminus_font ];
+    font ="${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
+    colors = [
+        "000000"
+        "f54456"
+        "fc7022"
+        "d6cd00"
+        "80c130"
 
-     };
+        "00c580"
+        "02ddf9"
+        "f7478d"
+        "b51c61"
+        
+        "8c3a5e"
+        "a86b7c"
+        "8c403a"
+
+        "faf9fc"
+        "faf9fc"
+        "faf9fc"
+        "faf9fc"
+    ];
+    };
 
    services.udev.extraRules = ''
     SUBSYSTEM=="usb", MODE="0666"

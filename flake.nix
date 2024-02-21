@@ -40,10 +40,10 @@
      #   modules = [./halfofwork/nixos/configuration.nix];
      # };
      # notebook
-     # cihla = nixpkgs.lib.nixosSystem {
-     #   specialArgs = {inherit inputs outputs;};
-     #   modules = [./cihla/nixos/configuration.nix];
-     # };
+       cihla = nixpkgs.lib.nixosSystem {
+         specialArgs = {inherit inputs outputs;};
+         modules = [./cihla/nixos/configuration.nix];
+       };
     };
 
     # Standalone home-manager configuration entrypoint

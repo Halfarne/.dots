@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs,  ... }:
+{ config, pkgs, lib, ... }:
 {
   imports =
     [
@@ -8,10 +8,12 @@
 
   # Boot
   boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+
  
   # NVIDIA
   nixpkgs.config.allowUnfree = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  #services.xserver.videoDrivers = [ "nvidia" ];
   programs.xwayland.enable = true;
 
   ############################### Linux kernel #################################
@@ -19,7 +21,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.kernelParams = ["msr.allow_writes=on" ];
+  #boot.kernelParams = ["msr.allow_writes=on" ];
 
   ############################### Nix configuration ################################
   ##################################################################################
@@ -144,7 +146,7 @@
      bashmount
      exfatprogs
      tmux
-     mesa
+
 
      rshell
 
@@ -154,19 +156,13 @@
      wbg
      wl-clipboard
 
-     qt5ct
-     libsForQt5.qtstyleplugin-kvantum
-
      #monocraft
 
      neovim
-     zathura
-
      jmtpfs
      mtpfs
 
-     stig
-
+     
      blueman
   ];
 
@@ -184,10 +180,10 @@
   ##################################### Programs and Services ######################################
   ##################################################################################################
 
-  # Fonts
-  fonts.packages = with pkgs; [
-   (nerdfonts.override { fonts = [ "Mononoki" "Hack"]; })
-  ];
+  ## Fonts
+  #fonts.packages = with pkgs; [
+  # (nerdfonts.override { fonts = [ "Mononoki" "Hack"]; })
+  #];
 
   # Blueman
   services.blueman.enable = true;
@@ -200,13 +196,13 @@
 	    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	    config.common.default = "*";
 	  };
+#
+#  programs.hyprland = {
+#    enable = true;
+#    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+#  };
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  };
-
-  services.transmission.enable = true;
+  #services.transmission.enable = true;
 
   # Starship
   programs.starship.enable = true;

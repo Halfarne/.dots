@@ -13,7 +13,7 @@
  
   # NVIDIA
   nixpkgs.config.allowUnfree = true;
-  #services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "ati" ];
   programs.xwayland.enable = true;
 
   ############################### Linux kernel #################################

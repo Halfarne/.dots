@@ -76,19 +76,12 @@
     _JAVA_AWT_WM_NONREPARENTING = "1";
     XCURSOR_SIZE = "24";
 
-    LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1";
     
     GDK_BACKEND = "wayland";
                           
     MOZ_DISABLE_RDD_SANDBOX = "1";
     MOZ_ENABLE_WAYLAND = "1";
-                          
-    NVD_LOG = "1";
-    NVD_MAX_INSTANCES = "10";
-    NVD_BACKEND = "egl";
   };
 
  

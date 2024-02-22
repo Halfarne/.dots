@@ -11,9 +11,13 @@
   boot.loader.grub.device = "/dev/sda";
 
  
-  # NVIDIA
+  # Graphics
   nixpkgs.config.allowUnfree = true;
-  services.xserver.videoDrivers = [ "ati" ];
+  #services.xserver.enable = true;
+  #services.xserver.videoDrivers = [ "radeon" ];
+  hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
   programs.xwayland.enable = true;
 
   ############################### Linux kernel #################################
@@ -21,7 +25,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  #boot.kernelParams = ["msr.allow_writes=on" ];
+  boot.kernelParams = [ "modeset" ];
 
   ############################### Nix configuration ################################
   ##################################################################################
@@ -108,9 +112,6 @@
     SUBSYSTEM=="usb", MODE="0666"
     '';
 
-
-  #console.keyMap = "cz-lat2";
-
   ##################################### /etc/issue ####################################
   #####################################################################################
   environment.etc = {
@@ -156,16 +157,14 @@
      exfatprogs
      tmux
 
-
      rshell
 
      libva
+     mesa
      libinput
 
      wbg
      wl-clipboard
-
-     #monocraft
 
      neovim
      jmtpfs

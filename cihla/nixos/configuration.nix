@@ -95,23 +95,12 @@
     colors = [
         "000000"
         "f54456"
-        "fc7022"
-        "d6cd00"
         "80c130"
-
-        "00c580"
+        "fc7022"
         "02ddf9"
-        "f7478d"
         "b51c61"
-        
-        "8c3a5e"
-        "a86b7c"
-        "8c403a"
-
-        "faf9fc"
-        "faf9fc"
-        "faf9fc"
-        "faf9fc"
+        "02ddf9"
+        "e4d2d7"
     ];
     };
 
@@ -195,8 +184,6 @@
  
   programs.nix-ld.enable = true;
 
-  #programs.nix-ld.package = pkgs.callPackage ../nix-ld.nix {};
-
   ##################################### Programs and Services ######################################
   ##################################################################################################
 
@@ -209,7 +196,13 @@
   services.blueman.enable = true;
   
   #KMSCON
-  services.kmscon.enable = true;
+  #services.kmscon = {
+  #  enable = true;
+  #  extraConfig = "--xkb-layout=cz";
+  #  
+  # 
+  #  fonts = [{ name = "Cozette"; package = pkgs.cozette; }]
+  #  };
 
   #XDG
     xdg.portal = {

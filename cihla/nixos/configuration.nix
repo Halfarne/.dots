@@ -195,13 +195,13 @@
   services.blueman.enable = true;
   
   #KMSCON
-  #services.kmscon = {
-  #  enable = true;
-  #  extraConfig = "--xkb-layout=cz";
-  #  
-  # 
-  #  fonts = [{ name = "Cozette"; package = pkgs.cozette; }]
-  #  };
+   services.kmscon = {
+     enable = true;
+     extraOptions = "--xkb-layout=cz --session-max 5";
+     
+    
+     fonts = [{ name = "Cozette"; package = pkgs.cozette; }];
+     };
 
   #XDG
     xdg.portal = {

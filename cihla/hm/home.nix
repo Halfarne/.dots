@@ -128,6 +128,8 @@
   #programs.kitty.enable = true;
   home.file.".config/kitty/kitty.conf".source = ./config/kitty.conf ;
 
+  home.file.".config/bat.sh".source = ./config/bat.sh ;
+
   #programs.rofi.enable = true;
   home.file.".config/rofi/config.rasi".source = ./config/config.rasi ;
   home.file.".config/rofi/themes/moje.rasi".source = ./config/moje.rasi ;

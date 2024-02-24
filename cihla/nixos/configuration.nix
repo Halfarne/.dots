@@ -8,7 +8,7 @@
 
   # Boot
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "/dev/disk/by-id/ata-Apacer_AS350_256GB_2023082901009393";
 
  
   # Graphics

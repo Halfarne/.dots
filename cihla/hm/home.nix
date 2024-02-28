@@ -64,6 +64,8 @@
     tree
     alacritty
     arduino-cli
+    cozette
+    lm_sensors
 
 
   ];
@@ -118,7 +120,7 @@
   programs.starship.enableBashIntegration = true;
 
   #home.file.".hyprinitrc.sh".source = ./config/.hyprinitrc ;
-  #home.file.".config/autostart.sh".source = ./config/autostart.sh ;
+  home.file.".config/autostart.sh".source = ./config/autostart.sh ;
   #hyprpaper --config ~/.config/plocha.conf 
   home.file.".config/plocha.jpg".source = ./config/plocha.jpg ;
 
@@ -133,7 +135,7 @@
   #programs.rofi.enable = true;
   home.file.".config/rofi/config.rasi".source = ./config/config.rasi ;
   home.file.".config/rofi/themes/moje.rasi".source = ./config/moje.rasi ;
-  home.file.".config/rofi/rofi-power-menu".source = ./config/rofi-power-menu ;
+  #home.file.".config/rofi/rofi-power-menu".source = ./config/rofi-power-menu ;
 
   #programs.zathura.enable = true;
   home.file.".config/zathura/zathurarc".source = ./config/zathurarc ;

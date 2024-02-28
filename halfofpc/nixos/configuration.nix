@@ -50,21 +50,24 @@
        options = [ "rw" "uid=1000" "gid=100" "umask=0022" "fmask=0022" ];
      };
 
-  #ext3
-#  fileSystems."/mnt/1TB-hdd" =
-#    { device = "/dev/disk/by-uuid/29788cf6-33b0-45a7-8ee0-a5368cb4e723";
-#      fsType = "ext3"; 
-#      options = ["defaults" "rw"];
-#    };
-#
-   # ...
-   #fileSystems."/nix" = {
-   #  device = "/dev/disk/by-uuid/019e842a-5d1b-4836-8170-d67230765e9b";
-   #  fsType = "btrfs";
-   #  neededForBoot = true;
-   #  options = [ "noatime" ];
-   #};
- 
+
+  fileSystems."/mnt/Zabava" =
+    { device = "/dev/disk/by-uuid/1a0ec9ad-eca1-4e16-90cb-253cd1563fd8";
+      fsType = "ext4"; 
+      options = ["defaults" "rw"];
+    };
+
+  fileSystems."/mnt/Dokumenty" =
+    { device = "/dev/disk/by-uuid/b6d3ba3d-8f21-44d2-89c6-d4d970ed18bc";
+      fsType = "btrfs"; 
+      options = ["defaults" "rw"];
+    };
+
+  fileSystems."/mnt/Zalohy" =
+    { device = "/dev/disk/by-uuid/2514c7e8-ef9e-442e-8d33-279c7ae2a647";
+      fsType = "btrfs"; 
+      options = ["defaults" "rw"];
+    };
 
   
 
@@ -215,6 +218,8 @@
      exfatprogs
      tmux
      mesa
+
+     parted
 
      #minicom
      #libusb1

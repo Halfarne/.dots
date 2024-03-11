@@ -44,29 +44,29 @@
   #ntfs
   boot.supportedFilesystems = [ "ntfs" ];
 
-   fileSystems."/mnt/500G-ssd" =
-     { device = "/dev/disk/by-uuid/57A11A4670A755AC";
-       fsType = "ntfs"; 
-       options = [ "rw" "uid=1000" "gid=100" "umask=0022" "fmask=0022" ];
-     };
+  # fileSystems."/mnt/500G-ssd" =
+  #   { device = "/dev/disk/by-uuid/57A11A4670A755AC";
+  #     fsType = "ntfs"; 
+  #     options = [ "rw" "uid=1000" "gid=100" "umask=0022" "fmask=0022" ];
+  #   };
 
 
   fileSystems."/mnt/Zabava" =
     { device = "/dev/disk/by-uuid/1a0ec9ad-eca1-4e16-90cb-253cd1563fd8";
       fsType = "ext4"; 
-      options = ["defaults" "rw"];
+      options = ["defaults" "rw" ];
     };
 
   fileSystems."/mnt/Dokumenty" =
     { device = "/dev/disk/by-uuid/b6d3ba3d-8f21-44d2-89c6-d4d970ed18bc";
       fsType = "btrfs"; 
-      options = ["defaults" "rw"];
+      options = ["defaults" "rw" ];
     };
 
   fileSystems."/mnt/Zalohy" =
     { device = "/dev/disk/by-uuid/2514c7e8-ef9e-442e-8d33-279c7ae2a647";
       fsType = "btrfs"; 
-      options = ["defaults" "rw"];
+      options = ["defaults" "rw" ];
     };
 
   
@@ -352,7 +352,7 @@
 
   services.mpd = {
    enable = true;
-   musicDirectory = "/home/halfarne/Syncthing/Hudba";
+   musicDirectory = "/mnt/Zabava/Hudba";
    user = "halfarne";
    extraConfig = ''
       audio_output {
@@ -373,8 +373,8 @@
     syncthing = {
         enable = true;
         user = "halfarne";
-        dataDir = "/home/halfarne/Syncthing";    # Default folder for new synced folders
-        configDir = "/home/halfarne/Syncthing/.config";   # Folder for Syncthing's settings and keys
+        dataDir = "/mnt/Dokumenty/Syncthing";    # Default folder for new synced folders
+        configDir = "/mnt/Dokumenty/Syncthing/.config";   # Folder for Syncthing's settings and keys
         overrideFolders = false;
         overrideDevices = false;
     };

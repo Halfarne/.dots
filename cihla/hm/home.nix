@@ -36,6 +36,7 @@
     slurp
     rpi-imager
     openscad
+    librecad
 
     #spotdl
 
@@ -87,10 +88,25 @@
   };
 
  
+  nixpkgs.overlays = [ (self: super: { gruvbox = super.callPackage ./packages/gruvbox {}; }) ];
+
+  gtk.enable = true;
+  gtk.theme.package = pkgs.gruvbox;
+  gtk.theme.name = "Gruvbox-Dark";
+
+  qt.enable = true;
+
   home.file.".local/share/fonts/SpaceMono-Regular.ttf".source = ./fonts/SpaceMono-Regular.ttf ;
   home.file.".local/share/fonts/SpaceMono-Bold.ttf".source = ./fonts/SpaceMono-Bold.ttf ;
   home.file.".local/share/fonts/SpaceMono-BoldItalic.ttf".source = ./fonts/SpaceMono-BoldItalic.ttf ;
   home.file.".local/share/fonts/SpaceMono-Italic.ttf".source = ./fonts/SpaceMono-Italic.ttf ;
+
+    
+  gtk.font = {
+    name = "Space Mono";
+    size = 11;
+  };
+  gtk.iconTheme.name = "Tela-circle-dark";
 
   programs.git = {
     enable = true;

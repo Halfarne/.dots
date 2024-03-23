@@ -66,6 +66,11 @@
   security.doas.enable = true;
   security.sudo.enable = false;
 
+  services.fprintd.enable = true;
+  security.pam.services = {
+    login.fprintAuth = true;
+    doas.fprintAuth = true;
+  };
      # Configure doas
      security.doas.extraRules = [{
         users = [ "halfarne" ];

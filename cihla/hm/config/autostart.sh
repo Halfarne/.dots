@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+exec <&-
+
 #exec ~/.config/plocha.sh &&
 
 exec wbg ~/.config/plocha.jpg &&

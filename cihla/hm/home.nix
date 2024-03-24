@@ -39,6 +39,7 @@
     librecad
 
     #spotdl
+    neofetch
 
     iamb
     vimpc
@@ -100,7 +101,8 @@
   home.file.".local/share/fonts/SpaceMono-Bold.ttf".source = ./fonts/SpaceMono-Bold.ttf ;
   home.file.".local/share/fonts/SpaceMono-BoldItalic.ttf".source = ./fonts/SpaceMono-BoldItalic.ttf ;
   home.file.".local/share/fonts/SpaceMono-Italic.ttf".source = ./fonts/SpaceMono-Italic.ttf ;
-
+  
+  home.file.".local/share/fonts/kirsch2x.dfont".source = ./fonts/kirsch2x.dfont ;
     
   gtk.font = {
     name = "Space Mono";
@@ -122,8 +124,7 @@
     please = "doas";
     c = "clear";
     ipv6 = "ip -6 addr show scope global";
-    ssh = "kitty +kitten ssh";
-    img = "kitty +kittent icat";
+    dwl = "/home/halfarne/dwl.sh";
     time = "timedatectl | grep 'Local'";
 
       };
@@ -138,13 +139,11 @@
   #home.file.".hyprinitrc.sh".source = ./config/.hyprinitrc ;
   home.file.".config/autostart.sh".source = ./config/autostart.sh ;
   #hyprpaper --config ~/.config/plocha.conf 
-  home.file.".config/plocha_pixel_hall_thruster.png".source = ./config/plocha;
+  home.file.".config/plocha".source = ./config/plocha_pixel_hall_thruster.png;
 
-  #services.dunst.enable = true;
   home.file.".config/dunst/dunstrc".source = ./config/dunstrc ;
 
-  #programs.kitty.enable = true;
-  home.file.".config/kitty/kitty.conf".source = ./config/kitty.conf ;
+  home.file.".config/alacritty.toml".source = ./config/alacritty.toml ;
 
   home.file.".config/bat.sh".source = ./config/bat.sh ;
 

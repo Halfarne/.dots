@@ -4,7 +4,7 @@ exec <&-
 
 #exec ~/.config/plocha.sh &&
 
-exec wbg ~/.config/plocha.jpg &&
+exec wbg ~/.config/plocha &&
 
 exec dunst &&
 

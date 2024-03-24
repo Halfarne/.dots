@@ -138,7 +138,7 @@
   #home.file.".hyprinitrc.sh".source = ./config/.hyprinitrc ;
   home.file.".config/autostart.sh".source = ./config/autostart.sh ;
   #hyprpaper --config ~/.config/plocha.conf 
-  home.file.".config/plocha.jpg".source = ./config/plocha.jpg ;
+  home.file.".config/plocha_pixel_hall_thruster.png".source = ./config/plocha;
 
   #services.dunst.enable = true;
   home.file.".config/dunst/dunstrc".source = ./config/dunstrc ;

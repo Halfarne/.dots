@@ -175,6 +175,7 @@
      jmtpfs
      mtpfs
 
+     brightnessctl
      
      blueman
   ];

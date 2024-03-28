@@ -268,7 +268,7 @@
 
   services.mpd = {
    enable = true;
-   musicDirectory = "/home/halfarne/Syncthing/Hudba";
+   musicDirectory = "/home/halfarne/Hudba";
    user = "halfarne";
    extraConfig = ''
       audio_output {

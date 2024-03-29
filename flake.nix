@@ -29,11 +29,11 @@
         specialArgs = {inherit inputs outputs;};
         modules = [./halfofpc/nixos/configuration.nix];
       };
-     # # server
-     # halfofserver = nixpkgs.lib.nixosSystem {
-     #   specialArgs = {inherit inputs outputs;};
-     #   modules = [./halfofserver/nixos/configuration.nix];
-     # };
+     # server
+       halfofserver = nixpkgs.lib.nixosSystem {
+         specialArgs = {inherit inputs outputs;};
+         modules = [./halfofserver/nixos/configuration.nix];
+       };
      # dílna
      # halfowork = nixpkgs.lib.nixosSystem {
      #   specialArgs = {inherit inputs outputs;};

@@ -68,7 +68,7 @@
     arduino-cli
     cozette
     lm_sensors
-
+    aerc
 
   ];
 

@@ -72,6 +72,7 @@
     arduino-cli
     steam-tui
     steamcmd
+    aerc
 
   ];
 

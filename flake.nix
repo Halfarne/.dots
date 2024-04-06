@@ -4,6 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs_old.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
@@ -14,6 +15,7 @@
 
   outputs = {
     self,
+    nixpkgs,
     nixpkgs,
     home-manager,
     hyprland,
@@ -43,6 +45,10 @@
        cihla = nixpkgs.lib.nixosSystem {
          specialArgs = {inherit inputs outputs;};
          modules = [./cihla/nixos/configuration.nix];
+       };
+       halfofraspberry = nixpkgs_old.lib.nixosSystem {
+         specialArgs = {inherit inputs outputs;};
+         modules = [./halfofraspberry/nixos/configuration.nix];
        };
     };
 

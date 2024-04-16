@@ -16,7 +16,7 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs,
+    nixpkgs_old,
     home-manager,
     hyprland,
     ...

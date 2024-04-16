@@ -69,6 +69,7 @@
     cozette
     lm_sensors
     aerc
+    lilypond
 
   ];
 

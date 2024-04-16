@@ -74,6 +74,8 @@
     steamcmd
     aerc
 
+    lilypond
+
   ];
 
   home.sessionVariables = {

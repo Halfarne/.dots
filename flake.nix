@@ -3,8 +3,8 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs_old.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs_stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
@@ -15,8 +15,8 @@
 
   outputs = {
     self,
-    nixpkgs,
-    nixpkgs_old,
+    nixpkgs-unstable,
+    nixpkgs-stable,
     home-manager,
     hyprland,
     ...
@@ -27,26 +27,26 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # hlavni PC
-      halfofpc = nixpkgs.lib.nixosSystem {
+      halfofpc = nixpkgs-unstable.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [./halfofpc/nixos/configuration.nix];
       };
      # server
-       halfofserver = nixpkgs.lib.nixosSystem {
+       halfofserver = nixpkgs-stable.lib.nixosSystem {
          specialArgs = {inherit inputs outputs;};
          modules = [./halfofserver/nixos/configuration.nix];
        };
      # dílna
-     # halfowork = nixpkgs.lib.nixosSystem {
+     # halfowork = nixpkgs-stable.lib.nixosSystem {
      #   specialArgs = {inherit inputs outputs;};
      #   modules = [./halfofwork/nixos/configuration.nix];
      # };
      # notebook
-       cihla = nixpkgs.lib.nixosSystem {
+       cihla = nixpkgs-unstable.lib.nixosSystem {
          specialArgs = {inherit inputs outputs;};
          modules = [./cihla/nixos/configuration.nix];
        };
-       halfofraspberry = nixpkgs_old.lib.nixosSystem {
+       halfofraspberry = nixpkgs-stable.lib.nixosSystem {
          specialArgs = {inherit inputs outputs;};
          modules = [./halfofraspberry/nixos/configuration.nix];
        };

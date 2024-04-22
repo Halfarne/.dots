@@ -29,13 +29,176 @@
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
    };
 
+  environment.shellAliases = {
+      please = "doas";
+      sudo = "doas";
+  };
+
+  programs.dconf.enable = true;
+
+  # Doas
+  # Enable doas instead of sudo
+  security.doas.enable = true;
+  security.sudo.enable = false;
+
+     # Configure doas
+     security.doas.extraRules = [{
+        users = [ "halfarne" ];
+        keepEnv = true;
+  	    persist = true;
+     }];
+
+
+  # SSID
+  # programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+ 
+  # Set your time zone.
+  time.timeZone = "Europe/Prague";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "cs_CZ.UTF-8";
+   console = {
+     keyMap = "cz-lat2";
+   };
+
+  #console.keyMap = "cz-lat2";
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
    environment.systemPackages = with pkgs; [
-     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
      git
+     
+     gh
+     gcc
+
+
+     jdk
+     jre
+
+     python3
+
+     btop
+     starship
+     wget
+     nitch
+     zip
+     unzip
+     bashmount
+     exfatprogs
+     tmux
+     ngrok
+
+     neovim
+
+     pamixer
+
+     blueman
+
+     xmrig
+     powertop
   ];
+
+
+# Starship
+  programs.starship.enable = true;
+  programs.starship.settings = {
+  add_newline = false;
+     format = "$nix_shell$directory$character";
+     directory = {
+       read_only = " ";
+       truncation_length = 0;
+       style = "bold cyan";
+     };
+     character = {
+       success_symbol = "[s>](white bold)";
+       error_symbol = "[s>](red bold)";
+     };
+     nix_shell = {
+       symbol = "❄(boldw white) ";
+       style = "bold blue";
+       format = "[$symbol$state( \($name\))]($style) ";
+     };
+  };
+
+
+
+#udisk
+  services.udisks2.enable=true;
+
+  #Syncthing
+  services = {
+    syncthing = {
+        enable = true;
+        user = "halfarne";
+        dataDir = "/mnt/Dokumenty/Syncthing";    # Default folder for new synced folders
+        configDir = "/mnt/Dokumenty/Syncthing/.config";   # Folder for Syncthing's settings and keys
+        overrideFolders = false;
+        overrideDevices = false;
+    };
+  };
+
+  services.syncthing.settings.gui = {
+    user = "halfarne";
+    password = "halfarne";
+  };
+
+  #Blocky
+  services.blocky = {
+    enable = true;
+    settings = {
+      port = 53; # Port for incoming DNS Queries.
+      upstream.default = [
+        "https://doh.libredns.gr/dns-query" # LibreDNS - dns over https 
+      ];
+      # For initially solving DoH/DoT Requests when no system Resolver is available.
+      bootstrapDns = {
+        upstream = "https://doh.libredns.gr/dns-query";
+        ips = [ "116.202.176.26" ];
+      };
+      #Enable Blocking of certian domains.
+      blocking = {
+        blackLists = {
+          #Adblocking
+          ads = ["https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"];
+      };
+      #Configure what block categories are used
+      clientGroupsBlock = {
+        default = [ "ads" ];
+      };
+    };
+  };
+  };
+
+
+  networking.firewall.allowedTCPPorts = [ 
+
+  8123
+  8124
+  6052
+  22
+
+  ];
+
+  networking.firewall.allowPing = true;
+
+  ###################################### OCI container
+
+  docker-containers.hass = {
+      image = "homeassistant/home-assistant:stable";
+      environment = { TZ = "Europe/Prague"; };
+      extraDockerOptions = ["--net=host" ];
+      volumes = [ "/var/lib/homeassistant:/config" ];
+  };
+
+  docker-containers.esphome = {
+      image = "esphome/esphome";
+      extraDockerOptions = ["--privileged" ]; 
+      volumes = [ "/var/lib/esphome:/config" ];
+  };
  # Enable the OpenSSH daemon.
     services.openssh.enable = true;
   # Open ports in the firewall.

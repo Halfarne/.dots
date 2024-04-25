@@ -8,7 +8,7 @@
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
 
     hyprland.url = "github:hyprwm/Hyprland";
   };
@@ -56,7 +56,7 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       "halfarne@halfofpc" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
         modules = [
@@ -74,7 +74,7 @@
      #    {wayland.windowManager.hyprland.enable = true;}
      #  };
         "halfarne@cihla" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = {inherit inputs outputs;};
           # > Our main home-manager configuration file <
           modules = [./cihla/hm/home.nix];
@@ -83,7 +83,7 @@
         };
 
       "halfarne@halfofraspberry" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-linux; # Home-manager requires 'pkgs' instance
+        pkgs = nixpkgs-stable.legacyPackages.aarch64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
         modules = [./halfofraspberry/hm/home.nix]; #home-manager --extra-experimental-features "nix-command flakes auto-allocate-uids impure-env" switch --flake ./#halfarne@halfofraspberry

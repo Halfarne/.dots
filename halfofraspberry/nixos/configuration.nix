@@ -10,24 +10,17 @@
       ./hardware-configuration.nix
     ];
 
-  # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
   boot.loader.grub.enable = false;
-  # Enables the generation of /boot/extlinux/extlinux.conf
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  networking.hostName = "halfofraspberry"; # Define your hostname.
-  # Pick only one of the below networking options.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Set your time zone.
+  networking.hostName = "halfofraspberry"; 
+  networking.networkmanager.enable = true;  
   time.timeZone = "Europe/Prague";
 
-   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.halfarne = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-   };
+     extraGroups = [ "wheel" ]; 
+     };
 
   environment.shellAliases = {
       please = "doas";
@@ -55,9 +48,6 @@
     enable = true;
     enableSSHSupport = true;
   };
- 
-  # Set your time zone.
-  time.timeZone = "Europe/Prague";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "cs_CZ.UTF-8";
@@ -90,8 +80,6 @@
      bashmount
      exfatprogs
      tmux
-     ngrok
-
      neovim
 
      pamixer
@@ -134,8 +122,8 @@
     syncthing = {
         enable = true;
         user = "halfarne";
-        dataDir = "/mnt/Dokumenty/Syncthing";    # Default folder for new synced folders
-        configDir = "/mnt/Dokumenty/Syncthing/.config";   # Folder for Syncthing's settings and keys
+        dataDir = "/home/halfarne/Syncthing";    # Default folder for new synced folders
+        configDir = "/home/halfarne/Syncthing/.config";   # Folder for Syncthing's settings and keys
         overrideFolders = false;
         overrideDevices = false;
     };

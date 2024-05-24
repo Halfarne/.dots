@@ -71,6 +71,7 @@
     aerc
     lilypond
 
+    kicad
   ];
 
   home.sessionVariables = {

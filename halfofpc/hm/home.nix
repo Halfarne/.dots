@@ -52,7 +52,9 @@
     wbg
     qt5ct
     libsForQt5.qtstyleplugin-kvantum
-    eagle
+    #eagle
+    #kicad
+    kicad-small
     prusa-slicer
     libreoffice
     tmux
@@ -213,7 +215,7 @@
 
   #programs.waybar.enable = true;
   programs.eww.enable = true;
-  programs.eww.package = pkgs.eww-wayland;
+  programs.eww.package = pkgs.eww;
   programs.eww.configDir = ./config/eww ;
 
   services.mpd-mpris.enable = true;

@@ -272,12 +272,4 @@ end
   map("n", "c", ":tabclose<CR>", { silent = true })
   map("t", ",c", "exit<CR>", { silent = true })
   vim.keymap.set({'n'}, '<C-c>', '"+y$')
--- Current selection (visual mode)
-vim.keymap.set({'v'}, '<C-c>', '"+y')
-
--- Cutting to system clipboard
--- From current cursor position to EOL (normal mode)
-vim.keymap.set({'n'}, '<C-x>', '"+d$')
--- Current selection (visual mode)
-vim.keymap.set({'v'}, '<C-x>', '"+d')
 
